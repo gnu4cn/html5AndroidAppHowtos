@@ -156,10 +156,12 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
 
 4. 安装 Android SDK
 
+
     __Tools > SDK Manager__
 
 
 5. 配置Android 虚拟设备
+
 
     __Tools > AVD Manager__ 
 
