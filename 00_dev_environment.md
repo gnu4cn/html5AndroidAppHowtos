@@ -151,7 +151,6 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
 
     ```console
     $ /opt/android-studio/bin/studio.sh
-    ## 可启动Android Studio, 随后可以建立桌面快捷方式
     ```
 
 
