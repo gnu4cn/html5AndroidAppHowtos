@@ -128,7 +128,7 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
     javac 1.8.0_231
     ```
 
-## 安装 Android Studio
+## 安装/配置 Android Studio/Android SDK/Android Virtual Device
 
 前往 [developer.android.com/studio](https://developer.android.com/studio)下载 Android Studio 的压缩包。
 
@@ -147,12 +147,14 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
 
 运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio, 然后可以创建桌面快捷方式。
 
-## 安装 Android SDK
+3. 安装 Android SDK
 
 Android SDK 是在 Android Studio 中安装的。
 
+4. 配置Android 虚拟设备
 
-__以上两步完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环境变量__：
+
+__以上步骤完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环境变量__：
 
 
     ```bash
