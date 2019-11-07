@@ -13,11 +13,11 @@ Ionic的安装需要 NodeJS/NPM, 本身是由 TypeScript 构建，故需要掌�
 1. 使用该项目提供的安装脚本安装/更新 `nvm`
 
     ```console
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
     ```
 
     ```console
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    $ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
     ```
 
 2. 创建/修改`~/.npmrc`文件，使得其为以下内容:
