@@ -154,10 +154,12 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
 4. 安装 Android SDK
 
 
-    Android SDK 是在 Android Studio 中安装的。
+    Android SDK 是在 Android Studio 中安装的。__Tools > SDK Manager__
 
 
 5. 配置Android 虚拟设备
+
+    __Tools > AVD Manager__ 
 
 
 __以上步骤完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环境变量__：
