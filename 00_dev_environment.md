@@ -145,13 +145,15 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
     $ sudo chown -R peng:peng android-studio/
     ```
 
-运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio, 然后可以创建桌面快捷方式。
+3. 创建桌面快捷方式
 
-3. 安装 Android SDK
+    运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio, 然后可以创建桌面快捷方式。
 
-Android SDK 是在 Android Studio 中安装的。
+4. 安装 Android SDK
 
-4. 配置Android 虚拟设备
+    Android SDK 是在 Android Studio 中安装的。
+
+5. 配置Android 虚拟设备
 
 
 __以上步骤完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环境变量__：
