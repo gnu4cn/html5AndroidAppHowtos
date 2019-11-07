@@ -149,7 +149,11 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
 3. 创建桌面快捷方式
 
 
-    __运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio。__
+    ```console
+    $ /opt/android-studio/bin/studio.sh
+    ```
+
+    可启动Android Studio, 随后可以建立桌面快捷方式。
 
 
 4. 安装 Android SDK
