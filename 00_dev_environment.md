@@ -12,31 +12,31 @@ Ionic的安装需要 NodeJS/NPM, 本身是由 TypeScript 构建，故需要掌�
 
 1. 使用该项目提供的安装脚本安装/更新 `nvm`
 
-```console
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
+    ```console
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    ```
 
-```console
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
+    ```console
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    ```
 
 2. 创建/修改`~/.npmrc`文件，使得其为以下内容:
 
-```config
-registry=https://mirrors.huaweicloud.com/repository/npm/
-always-auth=false
-disturl=https://mirrors.huaweicloud.com/nodejs
-SASS_BINARY_SITE=https://mirrors.huaweicloud.com/node-sass
-PHANTOMJS_CDNURL=https://mirrors.huaweicloud.com/phantomjs
-CHROMEDRIVER_CDNURL=https://mirrors.huaweicloud.com/chromedriver
-OPERADRIVER_CDNURL=https://mirrors.huaweicloud.com/operadriver
-ELECTRON_MIRROR=https://mirrors.huaweicloud.com/electron/
-PYTHON_MIRROR=https://mirrors.huaweicloud.com/python
-## 这是因为在华为 NPM 源上找不到 ionic 
-@ionic:registry=https://registry.npmjs.org/
-```
+    ```config
+    registry=https://mirrors.huaweicloud.com/repository/npm/
+    always-auth=false
+    disturl=https://mirrors.huaweicloud.com/nodejs
+    SASS_BINARY_SITE=https://mirrors.huaweicloud.com/node-sass
+    PHANTOMJS_CDNURL=https://mirrors.huaweicloud.com/phantomjs
+    CHROMEDRIVER_CDNURL=https://mirrors.huaweicloud.com/chromedriver
+    OPERADRIVER_CDNURL=https://mirrors.huaweicloud.com/operadriver
+    ELECTRON_MIRROR=https://mirrors.huaweicloud.com/electron/
+    PYTHON_MIRROR=https://mirrors.huaweicloud.com/python
+    ## 这是因为在华为 NPM 源上找不到 ionic 
+    @ionic:registry=https://registry.npmjs.org/
+    ```
 
-2. 使用 `nvm` 安装最新的长期支持版（`LTS`）的 `node`
+3. 使用 `nvm` 安装最新的长期支持版（`LTS`）的 `node`
 
     - 使用`nvm ls-remote`可以查看可供安装的`node` 版本
         
@@ -64,7 +64,7 @@ PYTHON_MIRROR=https://mirrors.huaweicloud.com/python
         /home/peng/.nvm/versions/node/v12.13.0/bin/node
         ```
 
-2. 安装 Ionic/Cordova
+## 安装 Ionic/Cordova
 
 使用 `npm i -g ionic cordova` 全局安装 Ionic，得到：
 
@@ -75,19 +75,19 @@ PYTHON_MIRROR=https://mirrors.huaweicloud.com/python
     /home/peng/.nvm/versions/node/v12.13.0/bin/cordova
     ```
 
-3. 安装 Java JDK/JRE
+## 安装 Java JDK/JRE
 
 __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手动安装方法。__
 
 前往 [Java SE Development Kit 8 - oracle.com](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 网页查看最新的 Java JDK 8 二进制包版本，复制文件名（这里是`jdk-8u231-linux-x64.tar.gz`），然后Google下载该文件。
 
-- 将下载到的`tar.gz`压缩包解压到`/opt`
+1. 将下载到的`tar.gz`压缩包解压到`/opt`
 
     ```console
     sudo tar -zxvf jdk-8u231-linux-x64.tar.gz -C /opt
     ```
 
-- 将以下内容添加到 `~/.bashrc` 最后
+2. 将以下内容添加到 `~/.bashrc` 最后
 
     ```bash
     #set oracle jdk environment
@@ -97,19 +97,27 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
     export PATH=${JAVA_HOME}/bin:$PATH
     ```
 
-- 使环境变量马上生效：
+    _切勿添加其他环境变量，否则会导致运行`$ gradle -v`、`$ sdkmanager --update`等命令时出现`找不到或无法加载主类：java.se.ee`错误_
+
+3. 使环境变量马上生效：
 
     ```console
     $ source ~/.bashrc
     ```
 
-- __运行下面的命令，往系统中注册该JDK__：
+4. __运行下面的命令，往系统中注册该JDK__：
 
     ```console
     $ sudo update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_231/bin/java 300
     ```
 
-- 检查`java`、`javac`版本：
+5. 运行下面的命令，配置系统使用的 JDK:
+
+    ```console
+    $ sudo update-alternatives --config java
+    ```
+
+6. 检查`java`、`javac`版本：
 
     ```console
     $ java -version
@@ -120,30 +128,32 @@ __网上的使用 `ppa:webupd8team/java` 方式已不可用，得用下面的手
     javac 1.8.0_231
     ```
 
-4. 安装 Android Studio
+## 安装 Android Studio
 
 前往 [developer.android.com/studio](https://developer.android.com/studio)下载 Android Studio 的压缩包。
 
-- 解压到 `/opt`:
+1. 解压到 `/opt`:
 
     ```console
     $ sudo tar -zxvf android-studio-ide-191.5977832-linux.tar.gz /opt
     ```
 
-- 修改`android-studio/`权限
+2. 修改`android-studio/`权限
 
     ```console
     $ cd /opt
     $ sudo chown -R peng:peng android-studio/
     ```
 
-    运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio, 然后可以创建桌面快捷方式。
+运行 `/opt/android-studio/bin/studio.sh`可启动 Android Studio, 然后可以创建桌面快捷方式。
 
-5. 安装 Android SDK
+## 安装 Android SDK
 
-Android SDK 是在 Android Studio 中安装的。
+    Android SDK 是在 Android Studio 中安装的。
+
 
 __以上两步完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环境变量__：
+
 
     ```bash
     # Export the Android SDK path
@@ -152,11 +162,11 @@ __以上两步完成后，要在 `~/.bashrc` 中加入 `ANDROID_SDK_ROOT` 等环
     export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
     ```
 
-6. 安装 Gradle
+## 安装 Gradle
 
 Gradle 是 Android Studio 使用的构建工具。其安装是借助 [SDKMAN!](https://sdkman.io/)完成的。
 
-- 安装 SDKMAN!
+1. 安装 SDKMAN!
 
     ```console
     ## 下载 SDKMAN! 的安装脚本
@@ -168,7 +178,7 @@ Gradle 是 Android Studio 使用的构建工具。其安装是借助 [SDKMAN!](h
     SDKMAN 5.7.4+362
     ```
 
-- 安装 Gradle
+2. 安装 Gradle
 
     ```console
     $ sdk list gradle
@@ -204,7 +214,7 @@ Gradle 是 Android Studio 使用的构建工具。其安装是借助 [SDKMAN!](h
     ================================================================================
     ```
 
-- 安装最新的稳定版（`5.6.4`）
+3. 安装最新的稳定版（`5.6.4`）
 
     ```console
     $ sdk install gradle 5.6.4
