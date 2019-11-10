@@ -17,6 +17,17 @@ ___
 > 如你觉得本项目对你有所帮助，请考虑 [捐赠译者](https://github.com/gnu4cn/buy-me-a-coffee)。
 
 
+## Android 虚拟机中调试消息获取
+
+使用 Logcat 功能，可以获取到物理机或虚拟机中的 `console.log` 输出。
+
+```console
+$ adb devices
+List of devices attached
+emulator-5554	device
+$ adb -s emulator-5554 logcat | grep chromium
+```
+
 ## 目录
 
 [开发环境搭建(Android APP)](00_dev_environment.md)
