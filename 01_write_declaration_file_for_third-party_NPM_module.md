@@ -74,16 +74,16 @@ $ vim tsconfig.json
 # Add outDir, include, and set noImplicitAny
 <paste>
 {
-"compilerOptions": {
-"outDir": "./built",
-"module": "commonjs",
-"target": "es6",
-"noImplicitAny": true,
-"sourceMap": false
-},
-"include": [
-"src/**/*"
-]
+    "compilerOptions": {
+        "outDir": "./built",
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": true,
+        "sourceMap": false
+    },
+    "include": [
+        "src/**/*"
+    ]
 }
 </paste>
 
@@ -92,9 +92,9 @@ $ vim src/index.ts
 <paste>
 import * as dirObj from 'dir-obj';
 const project = dirObj.readDirectory(__dirname + '/..', {
-fileTransform: (file: dirObj.File) => {
-return file.fullpath;
-}
+    fileTransform: (file: dirObj.File) => {
+        return file.fullpath;
+    }
 });
 console.log(JSON.stringify(project, null, 2));
 </paste>
