@@ -116,7 +116,9 @@ __Warning! Could not find a declaration file for module__
 
 
 ```console
-src/index.ts(1,25): error TS7016: Could not find a declaration file for module 'dir-obj'. '/Users/chris/dev/personal/typescript-examples/node_modules/dir-obj/index.js' implicitly has an 'any' type.
+src/index.ts(1,25): error TS7016: Could not find a declaration file for module 'dir-obj'. 
+    '/Users/chris/dev/personal/typescript-examples/node_modules/dir-obj/index.js' implicitly 
+    has an 'any' type.
 ```
 
 在当前设置下，`tsc`无法就代码是否有效进行静态类型检查。为此就需要加入一个声明文件。
