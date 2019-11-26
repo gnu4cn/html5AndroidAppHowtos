@@ -61,11 +61,14 @@ your mercy for graceful operations on workers is 60 seconds
 command=/home/peng/ccna60d-apis/.venv/bin/uwsgi /home/peng/ccna60d-apis/uwsgi.ini
 user=peng
 directory=/home/peng/ccna60d-apis
+environment=POSTGRES_PW='your_postgres_password',MAIL_PASSWORD='your_mail_service_password'
 autostart=true
 autorestart=true
 startsecs=5
 startretries=3
 ```
+
+> __注意__： 使用supervisor管理的 uwsgi 下的 Python 中，`os.getenv`所能获取到的环境变量，要在这个文件中设置
 
 ## Nginx配置
 
